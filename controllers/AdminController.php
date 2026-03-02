@@ -11,7 +11,7 @@ class AdminController extends Controller
     {
         // Enforce Authentication and Authorization (Role 2, 3, or 4)
         if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
@@ -27,7 +27,7 @@ class AdminController extends Controller
 
             if (!in_array($method, $allowedFinancialMethods)) {
                 // If they request an unauthorized method, punt them back to dashboard
-                header('Location: /doncosa/public/dashboard');
+                header('Location: /dashboard');
                 exit;
             }
         }
@@ -99,7 +99,7 @@ class AdminController extends Controller
                 ];
 
                 if ($eventModel->addEvent($insertData)) {
-                    header('Location: /doncosa/public/admin/events');
+                    header('Location: /admin/events');
                     exit;
                 } else {
                     die('Error creating event');
@@ -118,7 +118,7 @@ class AdminController extends Controller
         $event = $eventModel->getEventById($id);
 
         if (!$event) {
-            header('Location: /doncosa/public/admin/events');
+            header('Location: /admin/events');
             exit;
         }
 
@@ -172,7 +172,7 @@ class AdminController extends Controller
                 ];
 
                 if ($eventModel->updateEvent($updateData)) {
-                    header('Location: /doncosa/public/admin/events');
+                    header('Location: /admin/events');
                     exit;
                 } else {
                     die('Error updating event');
@@ -190,13 +190,13 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $eventModel = $this->model('Event');
             if ($eventModel->deleteEvent($id)) {
-                header('Location: /doncosa/public/admin/events');
+                header('Location: /admin/events');
                 exit;
             } else {
                 die('Error deleting event');
             }
         } else {
-            header('Location: /doncosa/public/admin/events');
+            header('Location: /admin/events');
             exit;
         }
     }
@@ -257,7 +257,7 @@ class AdminController extends Controller
                 ];
 
                 if ($projectModel->addProject($insertData)) {
-                    header('Location: /doncosa/public/admin/projects');
+                    header('Location: /admin/projects');
                     exit;
                 } else {
                     die('Error creating project');
@@ -276,7 +276,7 @@ class AdminController extends Controller
         $project = $projectModel->getProjectById($id);
 
         if (!$project) {
-            header('Location: /doncosa/public/admin/projects');
+            header('Location: /admin/projects');
             exit;
         }
 
@@ -319,7 +319,7 @@ class AdminController extends Controller
                 ];
 
                 if ($projectModel->updateProject($updateData)) {
-                    header('Location: /doncosa/public/admin/projects');
+                    header('Location: /admin/projects');
                     exit;
                 } else {
                     die('Error updating project');
@@ -337,13 +337,13 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $projectModel = $this->model('Project');
             if ($projectModel->deleteProject($id)) {
-                header('Location: /doncosa/public/admin/projects');
+                header('Location: /admin/projects');
                 exit;
             } else {
                 die('Error deleting project');
             }
         } else {
-            header('Location: /doncosa/public/admin/projects');
+            header('Location: /admin/projects');
             exit;
         }
     }
@@ -368,7 +368,7 @@ class AdminController extends Controller
         $user = $userModel->getUserById($id);
 
         if (!$user) {
-            header('Location: /doncosa/public/admin/members');
+            header('Location: /admin/members');
             exit;
         }
 
@@ -388,7 +388,7 @@ class AdminController extends Controller
             $membership_position = isset($_POST['membership_position']) ? trim(htmlspecialchars($_POST['membership_position'])) : null;
 
             if ($userModel->updateUserAdmin($id, $role_id, $is_active, $membership_position)) {
-                header('Location: /doncosa/public/admin/members');
+                header('Location: /admin/members');
                 exit;
             } else {
                 die('Error updating user');
@@ -405,13 +405,13 @@ class AdminController extends Controller
 
             // Execute approval utilizing session user id as the approver
             if ($userModel->approveUser($id, $_SESSION['user_id'])) {
-                header('Location: /doncosa/public/admin/members');
+                header('Location: /admin/members');
                 exit;
             } else {
                 die('Error approving user');
             }
         } else {
-            header('Location: /doncosa/public/admin/members');
+            header('Location: /admin/members');
             exit;
         }
     }
@@ -434,13 +434,13 @@ class AdminController extends Controller
             }
 
             if ($userModel->deleteUser($id)) {
-                header('Location: /doncosa/public/admin/members');
+                header('Location: /admin/members');
                 exit;
             } else {
                 die('Error deleting user');
             }
         } else {
-            header('Location: /doncosa/public/admin/members');
+            header('Location: /admin/members');
             exit;
         }
     }
@@ -484,7 +484,7 @@ class AdminController extends Controller
                 ];
                 $excoPositionModel = $this->model('ExcoPosition');
                 if ($excoPositionModel->createPosition($posData)) {
-                    header('Location: /doncosa/public/admin/positions');
+                    header('Location: /admin/positions');
                     exit;
                 } else {
                     die('Entity Error. Could not create abstract position.');
@@ -499,13 +499,13 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $excoPositionModel = $this->model('ExcoPosition');
             if ($excoPositionModel->deletePosition($id)) {
-                header('Location: /doncosa/public/admin/positions');
+                header('Location: /admin/positions');
                 exit;
             } else {
                 die('Integrity Guard Active. Failed to destroy abstract position map.');
             }
         } else {
-            header('Location: /doncosa/public/admin/positions');
+            header('Location: /admin/positions');
             exit;
         }
     }
@@ -585,7 +585,7 @@ class AdminController extends Controller
                         $electionModel->mapPositionToElection($new_election_id, trim(htmlspecialchars($pos_title)));
                     }
 
-                    header('Location: /doncosa/public/admin/elections');
+                    header('Location: /admin/elections');
                     exit;
                 } else {
                     die('Entity Error. Could not deploy new election object.');
@@ -604,14 +604,14 @@ class AdminController extends Controller
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
         $electionModel = $this->model('Election');
         $electionModel->deleteElection($id);
 
-        header('Location: /doncosa/public/admin/elections');
+        header('Location: /admin/elections');
     }
 
     // --- DUES & ACCOUNTING ---
@@ -620,7 +620,7 @@ class AdminController extends Controller
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
@@ -639,7 +639,7 @@ class AdminController extends Controller
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
@@ -673,7 +673,7 @@ class AdminController extends Controller
                 ];
 
                 if ($paymentModel->createDue($dueData)) {
-                    header('Location: /doncosa/public/admin/dues');
+                    header('Location: /admin/dues');
                     exit;
                 } else {
                     $data['error'] = 'Something went wrong creating the due.';
@@ -688,21 +688,21 @@ class AdminController extends Controller
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
         $paymentModel = $this->model('Payment');
         $paymentModel->deleteDue($id);
 
-        header('Location: /doncosa/public/admin/dues');
+        header('Location: /admin/dues');
     }
 
     public function payments()
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
@@ -730,7 +730,7 @@ class AdminController extends Controller
     {
         // Enforce Level 2 access
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 
@@ -741,7 +741,7 @@ class AdminController extends Controller
             $paymentModel->updatePaymentStatus($id, $status);
         }
 
-        header('Location: /doncosa/public/admin/payments');
+        header('Location: /admin/payments');
     }
 
     // --- SETTINGS MANAGEMENT ---
@@ -813,7 +813,7 @@ class AdminController extends Controller
             }
 
             // Provide a success flash message or just redirect
-            header('Location: /doncosa/public/admin/settings');
+            header('Location: /admin/settings');
             exit;
         } else {
             $settings = $settingModel->getAllSettings();
@@ -874,7 +874,7 @@ class AdminController extends Controller
                     'created_by' => $data['created_by']
                 ];
                 if ($announcementModel->addAnnouncement($saveData)) {
-                    header('Location: /doncosa/public/admin/announcements');
+                    header('Location: /admin/announcements');
                     exit;
                 } else {
                     die('Error saving announcement');
@@ -893,7 +893,7 @@ class AdminController extends Controller
         $announcement = $announcementModel->getAnnouncementById($id);
 
         if (!$announcement) {
-            header('Location: /doncosa/public/admin/announcements');
+            header('Location: /admin/announcements');
             exit;
         }
 
@@ -927,7 +927,7 @@ class AdminController extends Controller
                     'status' => $data['status']
                 ];
                 if ($announcementModel->updateAnnouncement($saveData)) {
-                    header('Location: /doncosa/public/admin/announcements');
+                    header('Location: /admin/announcements');
                     exit;
                 } else {
                     die('Error updating announcement');
@@ -945,13 +945,13 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $announcementModel = $this->model('Announcement');
             if ($announcementModel->deleteAnnouncement($id)) {
-                header('Location: /doncosa/public/admin/announcements');
+                header('Location: /admin/announcements');
                 exit;
             } else {
                 die('Error deleting announcement');
             }
         } else {
-            header('Location: /doncosa/public/admin/announcements');
+            header('Location: /admin/announcements');
             exit;
         }
     }

@@ -22,7 +22,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/doncosa/public/auth/recover" method="post">
+                <form action="/auth/recover" method="post">
                     <div class="mb-4">
                         <label for="email" class="form-label fw-bold">Registered Email <sup>*</sup></label>
                         <input type="email" name="email" class="form-control form-control-lg shadow-sm"
@@ -43,7 +43,7 @@
                 </form>
 
                 <div class="mt-4 text-center">
-                    <a href="/doncosa/public/auth/login" class="text-secondary text-decoration-none small"><i
+                    <a href="/auth/login" class="text-secondary text-decoration-none small"><i
                             class="bi bi-arrow-left-short"></i> Back to Login</a>
                 </div>
             </div>

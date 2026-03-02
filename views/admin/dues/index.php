@@ -6,9 +6,9 @@
         <p class="text-muted">Create and manage financial obligations for platform members.</p>
     </div>
     <div class="col-md-4 text-md-end">
-        <a href="/doncosa/public/admin/payments" class="btn btn-outline-primary mb-2 mb-md-0 shadow-sm fw-bold"><i
+        <a href="/admin/payments" class="btn btn-outline-primary mb-2 mb-md-0 shadow-sm fw-bold"><i
                 class="bi bi-cash-stack me-1"></i> View Payments</a>
-        <a href="/doncosa/public/admin/dueCreate" class="btn btn-success shadow-sm fw-bold"><i
+        <a href="/admin/dueCreate" class="btn btn-success shadow-sm fw-bold"><i
                 class="bi bi-plus-circle-fill me-1"></i> Add New Levy</a>
     </div>
 </div>
@@ -71,7 +71,7 @@
                                     <?= date('M j, Y', strtotime($due['created_at'])); ?>
                                 </td>
                                 <td class="text-end px-4">
-                                    <a href="/doncosa/public/admin/dueDelete/<?= $due['id']; ?>"
+                                    <a href="/admin/dueDelete/<?= $due['id']; ?>"
                                         class="btn btn-sm btn-outline-danger shadow-sm"
                                         onclick="return confirm('Are you sure? This will not delete past payments tied to it but will remove the requirement.')">
                                         <i class="bi bi-trash-fill"></i>

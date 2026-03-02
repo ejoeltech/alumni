@@ -21,7 +21,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/doncosa/public/admin/dueCreate" method="post">
+                <form action="/admin/dueCreate" method="post">
                     <div class="mb-4">
                         <label for="title" class="form-label fw-bold small text-uppercase text-muted">Levy or Dues Title
                             <span class="text-danger">*</span></label>
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top">
-                        <a href="/doncosa/public/admin/dues"
+                        <a href="/admin/dues"
                             class="btn btn-outline-secondary fw-bold px-4 rounded-pill"><i
                                 class="bi bi-x-circle me-1"></i> Cancel</a>
                         <button type="submit"

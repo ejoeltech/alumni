@@ -4,9 +4,9 @@
         <p class="text-muted">Draft and manage public platform announcements and SMS/WhatsApp blasts.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/admin/announcementCreate" class="btn btn-primary shadow-sm"><i
+        <a href="/admin/announcementCreate" class="btn btn-primary shadow-sm"><i
                 class="bi bi-plus-circle"></i> New Broadcast Announcement</a>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
     </div>
 </div>
 
@@ -65,10 +65,10 @@
                                     </small>
                                 </td>
                                 <td class="pe-4 text-end">
-                                    <a href="/doncosa/public/admin/announcementEdit/<?= $announcement['id']; ?>"
+                                    <a href="/admin/announcementEdit/<?= $announcement['id']; ?>"
                                         class="btn btn-sm btn-light border shadow-sm text-primary">Edit / Push</a>
 
-                                    <form action="/doncosa/public/admin/announcementDelete/<?= $announcement['id']; ?>"
+                                    <form action="/admin/announcementDelete/<?= $announcement['id']; ?>"
                                         method="POST" class="d-inline"
                                         onsubmit="return confirm('WARNING: Are you sure you want to delete this broadcast?');">
                                         <button type="submit" class="btn btn-sm btn-outline-danger ms-1"><i

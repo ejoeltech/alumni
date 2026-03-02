@@ -3,7 +3,7 @@
         <div class="card shadow-sm border-0 mt-3">
             <div class="card-header bg-white pb-0 pt-4 d-flex justify-content-between align-items-center mb-2">
                 <h3 class="mb-0 text-dark fw-bold">Edit Profile</h3>
-                <a href="/doncosa/public/dashboard" class="btn btn-sm btn-outline-secondary"><i
+                <a href="/dashboard" class="btn btn-sm btn-outline-secondary"><i
                         class="bi bi-arrow-left"></i> Back</a>
             </div>
 
@@ -20,13 +20,13 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/doncosa/public/dashboard/editProfile" method="post" enctype="multipart/form-data">
+                <form action="/dashboard/editProfile" method="post" enctype="multipart/form-data">
 
                     <!-- Avatar Upload Section -->
                     <div class="d-flex align-items-center mb-4 bg-light p-3 rounded border">
                         <div class="me-4 position-relative">
                             <?php if (!empty($data['user']['profile_picture'])): ?>
-                                <img src="/doncosa/public/<?= htmlspecialchars($data['user']['profile_picture']); ?>"
+                                <img src="/<?= htmlspecialchars($data['user']['profile_picture']); ?>"
                                     id="previewAvatar" class="rounded-circle shadow-sm"
                                     style="width: 80px; height: 80px; object-fit: cover; border: 3px solid #0d6efd;">
                             <?php else: ?>
@@ -98,7 +98,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded border">
-                        <a href="/doncosa/public/auth/recover" class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope-fill me-1"></i> Or Recover via Email Token</a>
+                        <a href="/auth/recover" class="btn btn-outline-secondary btn-sm"><i class="bi bi-envelope-fill me-1"></i> Or Recover via Email Token</a>
                         <button type="submit" class="btn btn-primary shadow-sm fw-bold px-4 py-2"><i class="bi bi-save-fill me-2"></i> Lock Profile Changes</button>
                     </div>
 

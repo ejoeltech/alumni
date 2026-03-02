@@ -20,7 +20,7 @@
                     <div class="col-md-6 mb-4">
                         <div class="card h-100 border-success shadow-sm">
                             <?php if (!empty($event['image'])): ?>
-                                <img src="/doncosa/public/<?= $event['image']; ?>" class="card-img-top img-fluid" alt="Event Flier"
+                                <img src="/<?= $event['image']; ?>" class="card-img-top img-fluid" alt="Event Flier"
                                     style="max-height: 250px; object-fit: cover;">
                             <?php endif; ?>
                             <div class="card-body">
@@ -60,7 +60,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100 shadow-sm bg-light text-muted">
                             <?php if (!empty($event['image'])): ?>
-                                <img src="/doncosa/public/<?= $event['image']; ?>" class="card-img-top img-fluid" alt="Event Flier"
+                                <img src="/<?= $event['image']; ?>" class="card-img-top img-fluid" alt="Event Flier"
                                     style="max-height: 150px; object-fit: cover; opacity: 0.8;">
                             <?php endif; ?>
                             <div class="card-body">

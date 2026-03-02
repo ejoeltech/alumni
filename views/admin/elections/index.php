@@ -4,9 +4,9 @@
         <p class="text-muted">Deploy secure elections, map formal positions, and manage live democratic states.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/admin/electionCreate" class="btn btn-success"><i
+        <a href="/admin/electionCreate" class="btn btn-success"><i
                 class="bi bi-box2-heart-fill me-1"></i> Deploy New Election</a>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
     </div>
 </div>
 
@@ -62,7 +62,7 @@
                                     </small>
                                 </td>
                                 <td class="pe-4 text-end">
-                                    <form action="/doncosa/public/admin/electionDelete/<?= $elec['id']; ?>" method="POST"
+                                    <form action="/admin/electionDelete/<?= $elec['id']; ?>" method="POST"
                                         class="d-inline"
                                         onsubmit="return confirm('CRITICAL WARNING: Terminating this Election block will cascade delete ALL registered votes, candidates, and mappings connected to it permanently. PROCEED?');">
                                         <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash3"></i>

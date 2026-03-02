@@ -3,7 +3,7 @@
         <div class="card card-body bg-light mt-5">
             <h2>Log In</h2>
             <p>Please fill in your credentials to log in.</p>
-            <form action="/doncosa/public/auth/login" method="post">
+            <form action="/auth/login" method="post">
                 <div class="form-group mb-3">
                     <label for="email">Email or Phone Number: <sup>*</sup></label>
                     <input type="text" name="email"
@@ -16,7 +16,7 @@
                 <div class="form-group mb-3">
                     <div class="d-flex justify-content-between align-items-center mb-1">
                         <label for="password" class="mb-0">Password: <sup>*</sup></label>
-                        <a href="/doncosa/public/auth/recover" class="small text-muted text-decoration-none">Forgot
+                        <a href="/auth/recover" class="small text-muted text-decoration-none">Forgot
                             Password?</a>
                     </div>
                     <input type="password" name="password"
@@ -32,7 +32,7 @@
                         <input type="submit" value="Login" class="btn btn-primary shadow-sm btn-block">
                     </div>
                     <div class="col d-grid">
-                        <a href="/doncosa/public/auth/register" class="btn btn-outline-secondary btn-block">No account?
+                        <a href="/auth/register" class="btn btn-outline-secondary btn-block">No account?
                             Register</a>
                     </div>
                 </div>

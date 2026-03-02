@@ -7,7 +7,7 @@
         <p class="text-muted fs-5">Administrative and Developer configuration hubs.</p>
     </div>
     <div class="col-md-4 text-md-end">
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary shadow-sm px-4 fw-bold"><i
+        <a href="/dashboard" class="btn btn-outline-secondary shadow-sm px-4 fw-bold"><i
                 class="bi bi-arrow-left me-1"></i> Back to Dashboard</a>
     </div>
 </div>
@@ -21,32 +21,32 @@
                     <h4 class="card-title text-danger fw-bold mb-4"><i class="bi bi-tools me-2"></i> Admin Tools</h4>
                     <div class="list-group list-group-flush border-0 rounded-3 shadow-sm">
                         <?php if ($data['user']['role_id'] != 4): ?>
-                            <a href="/doncosa/public/admin/members"
+                            <a href="/admin/members"
                                 class="list-group-item list-group-item-action py-3 fw-bold"><i
                                     class="bi bi-people-fill text-primary me-2"></i> Manage Global Members</a>
                         <?php endif; ?>
 
-                        <a href="/doncosa/public/admin/payments"
+                        <a href="/admin/payments"
                             class="list-group-item list-group-item-action py-3 fw-bold"><i
                                 class="bi bi-bank2 text-success me-2"></i> Accounting Engine & Levies</a>
 
                         <?php if ($data['user']['role_id'] != 4): ?>
-                            <a href="/doncosa/public/admin/events"
+                            <a href="/admin/events"
                                 class="list-group-item list-group-item-action py-3 fw-bold"><i
                                     class="bi bi-calendar-event-fill text-warning me-2"></i> Create & Edit Events</a>
-                            <a href="/doncosa/public/admin/projects"
+                            <a href="/admin/projects"
                                 class="list-group-item list-group-item-action py-3 fw-bold"><i
                                     class="bi bi-clipboard2-data-fill text-info me-2"></i> Manage College Projects</a>
-                            <a href="/doncosa/public/admin/positions"
+                            <a href="/admin/positions"
                                 class="list-group-item list-group-item-action py-3 fw-bold text-primary"><i
                                     class="bi bi-diagram-3-fill me-2"></i> Pre-Configure Exco Positions</a>
-                            <a href="/doncosa/public/admin/elections"
+                            <a href="/admin/elections"
                                 class="list-group-item list-group-item-action py-3 fw-bold text-success"><i
                                     class="bi bi-box2-heart-fill me-2"></i> Run Live Platform Elections</a>
-                            <a href="/doncosa/public/admin/announcements"
+                            <a href="/admin/announcements"
                                 class="list-group-item list-group-item-action py-3 fw-bold text-dark"><i
                                     class="bi bi-megaphone-fill text-danger me-2"></i> Broadcast Mass Announcements</a>
-                            <a href="/doncosa/public/admin/settings"
+                            <a href="/admin/settings"
                                 class="list-group-item list-group-item-action py-3 fw-bold text-danger"><i
                                     class="bi bi-gear-fill me-2"></i> Core Platform Variables</a>
                         <?php endif; ?>
@@ -65,10 +65,10 @@
                         Station</h4>
 
                     <div class="list-group list-group-flush border-0 rounded-3 bg-transparent">
-                        <a href="/doncosa/public/admin/analytics"
+                        <a href="/admin/analytics"
                             class="list-group-item list-group-item-action py-3 fw-bold bg-transparent text-warning border-secondary"><i
                                 class="bi bi-cpu text-info me-2"></i> Master Developer Analytics</a>
-                        <a href="/doncosa/public/admin/staff"
+                        <a href="/admin/staff"
                             class="list-group-item list-group-item-action py-3 fw-bold bg-transparent text-danger border-secondary"><i
                                 class="bi bi-shield-lock text-danger me-2"></i> Admin Roles & Staff Routing</a>
                     </div>

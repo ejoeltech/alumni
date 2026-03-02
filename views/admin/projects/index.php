@@ -4,9 +4,9 @@
         <p class="text-muted">Manage all active, pending, and past alumni projects.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/admin/projectCreate" class="btn btn-primary shadow-sm"><i
+        <a href="/admin/projectCreate" class="btn btn-primary shadow-sm"><i
                 class="bi bi-plus-circle"></i> Create New Project</a>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
     </div>
 </div>
 
@@ -70,11 +70,11 @@
                                     <?= (!empty($project['project_lead'])) ? $project['project_lead'] : '<span class="text-muted fst-italic">None Assigned</span>'; ?>
                                 </td>
                                 <td class="pe-4 text-end">
-                                    <a href="/doncosa/public/admin/projectEdit/<?= $project['id']; ?>"
+                                    <a href="/admin/projectEdit/<?= $project['id']; ?>"
                                         class="btn btn-sm btn-outline-info">Edit</a>
 
                                     <!-- Delete Form -->
-                                    <form action="/doncosa/public/admin/projectDelete/<?= $project['id']; ?>" method="POST"
+                                    <form action="/admin/projectDelete/<?= $project['id']; ?>" method="POST"
                                         class="d-inline"
                                         onsubmit="return confirm('Are you sure you want to delete this project? This action cannot be undone.');">
                                         <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>

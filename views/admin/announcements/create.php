@@ -6,11 +6,11 @@
                     <h3 class="mb-0 text-primary fw-bold">Draft New Broadcast</h3>
                     <p class="text-muted small">Compose a message to send out to platform users and alumni networks.</p>
                 </div>
-                <a href="/doncosa/public/admin/announcements" class="text-secondary text-decoration-none mt-2"><i
+                <a href="/admin/announcements" class="text-secondary text-decoration-none mt-2"><i
                         class="bi bi-x-circle fs-3 text-secondary"></i></a>
             </div>
             <div class="card-body">
-                <form action="/doncosa/public/admin/announcementCreate" method="POST">
+                <form action="/admin/announcementCreate" method="POST">
 
                     <div class="mb-4">
                         <label for="title" class="form-label fw-bold">Broadcast Subject / Headline <span
@@ -97,7 +97,7 @@
                 aiDraftBtn.disabled = true;
                 loadRing.classList.remove('d-none');
 
-                fetch('/doncosa/public/admin/generateAIDraft', {
+                fetch('/admin/generateAIDraft', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ topic: subject })

@@ -3,8 +3,8 @@
         <h2 class="mb-4">Manage Events</h2>
 
         <div class="d-flex justify-content-between mb-3">
-            <a href="/doncosa/public/admin/eventCreate" class="btn btn-primary">Add New Event</a>
-            <a href="/doncosa/public/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+            <a href="/admin/eventCreate" class="btn btn-primary">Add New Event</a>
+            <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
         </div>
 
         <div class="card shadow-sm border-0">
@@ -44,9 +44,9 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="/doncosa/public/admin/eventEdit/<?= $event['id']; ?>"
+                                        <a href="/admin/eventEdit/<?= $event['id']; ?>"
                                             class="btn btn-sm btn-info text-white">Edit</a>
-                                        <form action="/doncosa/public/admin/eventDelete/<?= $event['id']; ?>" method="POST"
+                                        <form action="/admin/eventDelete/<?= $event['id']; ?>" method="POST"
                                             class="d-inline">
                                             <button type="submit" class="btn btn-sm btn-danger"
                                                 onclick="return confirm('WARNING!\nAre you sure you want to delete this event? This action cannot be undone.');">Delete</button>

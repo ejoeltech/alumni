@@ -164,7 +164,7 @@
                 <i class="bi bi-shield-lock-fill text-muted opacity-25 display-3 mb-3"></i>
                 <h5 class="fw-bold text-dark">Account Security Status</h5>
                 <p class="text-muted small mb-3">Your encryption status is strictly active and stable.</p>
-                <a href="/doncosa/public/dashboard/editProfile"
+                <a href="/dashboard/editProfile"
                     class="btn btn-outline-dark rounded-pill shadow-sm btn-sm px-4 fw-bold"><i
                         class="bi bi-pencil-square me-1"></i> Update Security Info</a>
             </div>

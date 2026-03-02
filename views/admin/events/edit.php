@@ -8,7 +8,7 @@
                 </small>
             </div>
             <div class="card-body">
-                <form action="/doncosa/public/admin/eventEdit/<?= $data['id']; ?>" method="POST"
+                <form action="/admin/eventEdit/<?= $data['id']; ?>" method="POST"
                     enctype="multipart/form-data">
 
                     <div class="mb-3">
@@ -64,7 +64,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded">
-                        <a href="/doncosa/public/admin/events" class="text-secondary text-decoration-none">Cancel</a>
+                        <a href="/admin/events" class="text-secondary text-decoration-none">Cancel</a>
                         <button type="submit" class="btn btn-info px-4 text-white">Save Changes</button>
                     </div>
                 </form>

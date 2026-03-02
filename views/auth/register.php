@@ -3,7 +3,7 @@
         <div class="card card-body bg-light mt-5 mb-5">
             <h2>Create An Account</h2>
             <p>Please fill out this form to register with the Alumni Platform.</p>
-            <form action="/doncosa/public/auth/register" method="post">
+            <form action="/auth/register" method="post">
 
                 <div class="form-group mb-3">
                     <label for="full_name">Full Name: <sup>*</sup></label>
@@ -82,7 +82,7 @@
                         <input type="submit" value="Register" class="btn btn-success btn-block">
                     </div>
                     <div class="col d-grid">
-                        <a href="/doncosa/public/auth/login" class="btn btn-light btn-block">Have an account? Login</a>
+                        <a href="/auth/login" class="btn btn-light btn-block">Have an account? Login</a>
                     </div>
                 </div>
             </form>

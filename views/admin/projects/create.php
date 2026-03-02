@@ -6,7 +6,7 @@
                 <p class="text-muted small">Fill in the details below to initialize a new alumni project.</p>
             </div>
             <div class="card-body">
-                <form action="/doncosa/public/admin/projectCreate" method="POST">
+                <form action="/admin/projectCreate" method="POST">
 
                     <div class="mb-4">
                         <label for="name" class="form-label fw-bold">Project Name <span
@@ -70,7 +70,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mt-5">
-                        <a href="/doncosa/public/admin/projects"
+                        <a href="/admin/projects"
                             class="text-secondary text-decoration-none px-3 py-2 btn btn-link">Cancel</a>
                         <button type="submit" class="btn btn-primary btn-lg shadow px-5 rounded-pill">Create Project <i
                                 class="bi bi-arrow-right-short"></i></button>

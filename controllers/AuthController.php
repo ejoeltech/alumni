@@ -11,7 +11,7 @@ class AuthController extends Controller
     {
         // If user is already logged in, redirect to dashboard or home
         if (isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/');
+            header('Location: /');
             exit;
         }
 
@@ -70,7 +70,7 @@ class AuthController extends Controller
 
                         // Force newly seeded blank Developer Admins straight into the Password Update form
                         if ($loggedInUser['email'] === 'devadmin' && empty($data['password'])) {
-                            header('Location: /doncosa/public/dashboard/editProfile');
+                            header('Location: /dashboard/editProfile');
                             exit;
                         }
                     }
@@ -92,7 +92,7 @@ class AuthController extends Controller
     {
         // If user is already logged in, redirect
         if (isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/');
+            header('Location: /');
             exit;
         }
 
@@ -169,7 +169,7 @@ class AuthController extends Controller
                 $userModel = $this->model('User');
                 if ($userModel->register($data)) {
                     // Redirect to login
-                    header('Location: /doncosa/public/auth/login');
+                    header('Location: /auth/login');
                     exit;
                 } else {
                     die('Something went wrong. Please try again later.');
@@ -191,14 +191,14 @@ class AuthController extends Controller
         unset($_SESSION['user_name']);
         unset($_SESSION['user_role']);
         session_destroy();
-        header('Location: /doncosa/public/auth/login');
+        header('Location: /auth/login');
         exit;
     }
 
     public function recover()
     {
         if (isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/');
+            header('Location: /');
             exit;
         }
 
@@ -222,7 +222,7 @@ class AuthController extends Controller
                 if ($user && $user['phone_number'] === $data['phone_number']) {
                     // Validated! Safe to set a temp session for password resetting
                     $_SESSION['recovery_user_id'] = $user['id'];
-                    header('Location: /doncosa/public/auth/reset');
+                    header('Location: /auth/reset');
                     exit;
                 } else {
                     $data['error'] = 'The provided email and phone number combination does not match our records.';
@@ -236,7 +236,7 @@ class AuthController extends Controller
     public function reset()
     {
         if (!isset($_SESSION['recovery_user_id'])) {
-            header('Location: /doncosa/public/auth/login');
+            header('Location: /auth/login');
             exit;
         }
 
@@ -266,7 +266,7 @@ class AuthController extends Controller
                 $userModel = $this->model('User');
                 if ($userModel->updatePassword($_SESSION['recovery_user_id'], $hashed)) {
                     unset($_SESSION['recovery_user_id']); // Ensure temporary access token is destroyed
-                    header('Location: /doncosa/public/auth/login?reset=success');
+                    header('Location: /auth/login?reset=success');
                     exit;
                 } else {
                     die('Critical Error updating user password structure.');
@@ -288,7 +288,7 @@ class AuthController extends Controller
         $_SESSION['user_role'] = $user['role_id'];
 
         // Redirect to home or dashboard
-        header('Location: /doncosa/public/');
+        header('Location: /');
         exit;
     }
 }

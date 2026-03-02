@@ -7,7 +7,7 @@
     <div class="col-md-6 text-md-end">
         <button id="btnRunCron" class="btn btn-warning shadow-sm rounded border-3 me-2 fw-bold text-dark"><i
                 class="bi bi-gear-wide-connected me-1"></i> Trigger Scheduled Tasks</button>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2 shadow-sm rounded border-3">Exit
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2 shadow-sm rounded border-3">Exit
             Developer Station</a>
     </div>
 </div>
@@ -257,7 +257,7 @@
                 outBox.classList.add('alert-warning');
                 outBox.textContent = "Connecting to Background Service /cron.php...\n";
 
-                fetch('/doncosa/public/cron.php?auth=internal_system')
+                fetch('/cron.php?auth=internal_system')
                     .then(response => {
                         if (!response.ok) throw new Error('Systems Check Failed - Unauthorized');
                         return response.text();

@@ -16,7 +16,7 @@
                     </div>
                 </div>
 
-                <form action="/doncosa/public/auth/reset" method="post">
+                <form action="/auth/reset" method="post">
                     <div class="mb-4">
                         <label for="password" class="form-label fw-bold">New Password <sup>*</sup></label>
                         <input type="password" name="password"

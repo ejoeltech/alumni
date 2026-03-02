@@ -2,7 +2,7 @@
     <div class="col-md-10 col-lg-8 mx-auto">
         <div class="card bg-transparent border-0 pb-0">
             <div class="card-body py-1 d-flex justify-content-between">
-                <a href="/doncosa/public/admin/announcements" class="text-secondary text-decoration-none"><i
+                <a href="/admin/announcements" class="text-secondary text-decoration-none"><i
                         class="bi bi-arrow-left-short"></i> Back to Messaging Base</a>
                 <span class="badge bg-secondary p-2 rounded-pill shadow-sm">Message ID: #
                     <?= $data['id']; ?>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
 
-                <form action="/doncosa/public/admin/announcementEdit/<?= $data['id']; ?>" method="POST">
+                <form action="/admin/announcementEdit/<?= $data['id']; ?>" method="POST">
 
                     <div class="mb-4">
                         <label for="title" class="form-label fw-bold">Broadcast Headline / Subject <span

@@ -10,7 +10,7 @@ class MembersController extends Controller
     {
         // Enforce Authentication (Must be logged in to view directory)
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/auth/login');
+            header('Location: /auth/login');
             exit;
         }
     }

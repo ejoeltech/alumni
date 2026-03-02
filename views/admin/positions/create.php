@@ -3,7 +3,7 @@
         <div class="card shadow-sm border-primary border-top border-4 rounded-3 h-100 my-4 pb-4 px-4 py-3">
             <div class="card-header bg-white border-0 pb-0 pt-4 px-0 d-flex justify-content-between align-items-center">
                 <h3 class="mb-0 text-primary fw-bold"><i class="bi bi-file-earmark-plus-fill me-2"></i> Construct Role Abstract</h3>
-                <a href="/doncosa/public/admin/positions" class="btn btn-sm btn-outline-secondary px-3 rounded-pill"><i class="bi bi-x-circle me-1"></i> Cancel Process</a>
+                <a href="/admin/positions" class="btn btn-sm btn-outline-secondary px-3 rounded-pill"><i class="bi bi-x-circle me-1"></i> Cancel Process</a>
             </div>
             
             <div class="card-body px-0 pt-4">
@@ -18,7 +18,7 @@
                     </div>
                 </div>
 
-                <form action="/doncosa/public/admin/positionCreate" method="POST">
+                <form action="/admin/positionCreate" method="POST">
                     
                     <div class="mb-4">
                         <label for="title" class="form-label d-block text-uppercase small fw-bold mb-2">Formal Role Designation <span class="text-danger">*</span></label>

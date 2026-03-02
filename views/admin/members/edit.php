@@ -2,7 +2,7 @@
     <div class="col-md-10 col-lg-8 mx-auto">
         <div class="card bg-transparent border-0 pb-0">
             <div class="card-body py-1 d-flex justify-content-between">
-                <a href="/doncosa/public/admin/members" class="text-secondary text-decoration-none"><i
+                <a href="/admin/members" class="text-secondary text-decoration-none"><i
                         class="bi bi-arrow-left-short"></i> Back to Members Directory</a>
                 <span class="badge bg-secondary p-2 rounded-pill shadow-sm">UID: #
                     <?= $data['user']['id']; ?>
@@ -45,7 +45,7 @@
                     </div>
                 <?php endif; ?>
 
-                <form action="/doncosa/public/admin/memberEdit/<?= $data['user']['id']; ?>" method="POST">
+                <form action="/admin/memberEdit/<?= $data['user']['id']; ?>" method="POST">
 
                     <div class="row g-4 mb-5 pb-3 border-bottom text-muted opacity-75">
                         <div class="col-md-6">

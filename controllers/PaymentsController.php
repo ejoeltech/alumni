@@ -5,7 +5,7 @@ class PaymentsController extends Controller
     {
         // Enforce Authentication
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/auth/login');
+            header('Location: /auth/login');
             exit;
         }
     }

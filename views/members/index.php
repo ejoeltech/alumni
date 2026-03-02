@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-6 text-md-end">
             <!-- Export Form Button -->
-            <form action="/doncosa/public/members/export" method="GET" class="d-inline">
+            <form action="/members/export" method="GET" class="d-inline">
                 <input type="hidden" name="search" value="<?= htmlspecialchars($data['filters']['search']); ?>">
                 <input type="hidden" name="graduation_year"
                     value="<?= htmlspecialchars($data['filters']['graduation_year']); ?>">
@@ -26,7 +26,7 @@
     <!-- Live Filters Architecture -->
     <div class="card shadow-sm border-0 mb-4 bg-light rounded-4 border border-2 border-primary border-opacity-25">
         <div class="card-body p-4">
-            <form action="/doncosa/public/members" method="GET" class="row g-3 align-items-end">
+            <form action="/members" method="GET" class="row g-3 align-items-end">
 
                 <div class="col-md-4">
                     <label class="form-label small fw-bold text-uppercase text-muted">Intelligent Global Search</label>
@@ -84,7 +84,7 @@
                     <!-- Small reset helper -->
                     <?php if (!empty($_GET)): ?>
                         <div class="text-center mt-2">
-                            <a href="/doncosa/public/members" class="text-decoration-none small text-danger"><i
+                            <a href="/members" class="text-decoration-none small text-danger"><i
                                     class="bi bi-x-circle me-1"></i>Clear Filters</a>
                         </div>
                     <?php endif; ?>
@@ -111,7 +111,7 @@
                             <div class="rounded-circle bg-white d-flex align-items-center justify-content-center border border-2 border-white shadow-sm"
                                 style="width: 55px; height: 55px; overflow: hidden; flex-shrink: 0;">
                                 <?php if (!empty($user['profile_picture'])): ?>
-                                    <img src="/doncosa/public/<?= htmlspecialchars($user['profile_picture']); ?>"
+                                    <img src="/<?= htmlspecialchars($user['profile_picture']); ?>"
                                         class="w-100 h-100" style="object-fit: cover;">
                                 <?php else: ?>
                                     <span

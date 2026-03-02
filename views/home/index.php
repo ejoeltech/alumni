@@ -86,15 +86,15 @@
 
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <?php if (isset($_SESSION['user_id'])): ?>
-                <a class="btn btn-light btn-lg px-5 fw-bold shadow-lg rounded-pill" href="/doncosa/public/dashboard">
+                <a class="btn btn-light btn-lg px-5 fw-bold shadow-lg rounded-pill" href="/dashboard">
                     Access Network Dashboard <i class="bi bi-arrow-right-short ms-1"></i>
                 </a>
             <?php else: ?>
                 <a class="btn btn-light btn-lg px-5 fw-bold shadow-lg rounded-pill text-primary"
-                    href="/doncosa/public/auth/register">
+                    href="/auth/register">
                     Join the Elite Network
                 </a>
-                <a class="btn btn-outline-light btn-lg px-5 fw-bold rounded-pill" href="/doncosa/public/auth/login">
+                <a class="btn btn-outline-light btn-lg px-5 fw-bold rounded-pill" href="/auth/login">
                     Secure Login
                 </a>
             <?php endif; ?>
@@ -113,7 +113,7 @@
                 <h4 class="card-title fw-bold">Live Events</h4>
                 <p class="card-text text-muted mb-4">Discover past memories and stay dynamically updated on upcoming
                     reunions, summits, and pivotal alumni activities.</p>
-                <a href="/doncosa/public/events" class="btn btn-primary rounded-pill px-4">View Directory</a>
+                <a href="/events" class="btn btn-primary rounded-pill px-4">View Directory</a>
             </div>
         </div>
     </div>
@@ -127,7 +127,7 @@
                 <h4 class="card-title fw-bold">Active Projects</h4>
                 <p class="card-text text-muted mb-4">Track milestone projects undertaken by our alumni consortium to
                     directly empower and support the college's future.</p>
-                <a href="/doncosa/public/projects" class="btn btn-primary rounded-pill px-4">View Initiatives</a>
+                <a href="/projects" class="btn btn-primary rounded-pill px-4">View Initiatives</a>
             </div>
         </div>
     </div>
@@ -141,7 +141,7 @@
                 <h4 class="card-title fw-bold">Mentorship</h4>
                 <p class="card-text text-muted mb-4">Interact instantly, mentor the next generation, and build powerful
                     resilient relationships with other distinguished members.</p>
-                <a href="/doncosa/public/home/about" class="btn btn-primary rounded-pill px-4">Read Manifesto</a>
+                <a href="/home/about" class="btn btn-primary rounded-pill px-4">Read Manifesto</a>
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@
                     <div class="card exco-card shadow-sm hover-lift border-top border-4 border-primary">
                         <div class="exco-avatar-wrapper shadow-sm">
                             <?php if (!empty($exco['profile_picture'])): ?>
-                                <img src="/doncosa/public/<?= htmlspecialchars($exco['profile_picture']); ?>"
+                                <img src="/<?= htmlspecialchars($exco['profile_picture']); ?>"
                                     alt="<?= htmlspecialchars($exco['full_name']); ?>" class="exco-avatar">
                             <?php else: ?>
                                 <div class="exco-avatar-placeholder">

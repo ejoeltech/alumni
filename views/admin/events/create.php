@@ -5,7 +5,7 @@
                 <h4 class="mb-0 text-primary">Create New Event</h4>
             </div>
             <div class="card-body">
-                <form action="/doncosa/public/admin/eventCreate" method="POST" enctype="multipart/form-data">
+                <form action="/admin/eventCreate" method="POST" enctype="multipart/form-data">
 
                     <div class="mb-3">
                         <label for="title" class="form-label">Event Title <sup>*</sup></label>
@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center bg-light p-3 rounded">
-                        <a href="/doncosa/public/admin/events" class="text-secondary text-decoration-none">Cancel</a>
+                        <a href="/admin/events" class="text-secondary text-decoration-none">Cancel</a>
                         <button type="submit" class="btn btn-success px-4">Publish Event</button>
                     </div>
                 </form>

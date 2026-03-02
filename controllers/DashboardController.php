@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         // Enforce Authentication
         if (!isset($_SESSION['user_id'])) {
-            header('Location: /doncosa/public/auth/login');
+            header('Location: /auth/login');
             exit;
         }
     }
@@ -25,7 +25,7 @@ class DashboardController extends Controller
 
         if (!$user) {
             // Failsafe in case session user is somehow deleted from DB
-            header('Location: /doncosa/public/auth/logout');
+            header('Location: /auth/logout');
             exit;
         }
 
@@ -42,7 +42,7 @@ class DashboardController extends Controller
     {
         // Enforce Level 2 access or higher
         if ($_SESSION['user_role'] < 2) {
-            header('Location: /doncosa/public/dashboard');
+            header('Location: /dashboard');
             exit;
         }
 

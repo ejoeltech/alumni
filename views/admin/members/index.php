@@ -4,7 +4,7 @@
         <p class="text-muted">Manage active alumni, adjust system roles, and revoke capabilities.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary">Back to Dashboard</a>
+        <a href="/dashboard" class="btn btn-outline-secondary">Back to Dashboard</a>
     </div>
 </div>
 
@@ -91,19 +91,19 @@
                                 </td>
                                 <td class="pe-4 text-end">
                                     <?php if ($user['is_approved'] == 0): ?>
-                                        <form action="/doncosa/public/admin/memberApprove/<?= $user['id']; ?>" method="POST"
+                                        <form action="/admin/memberApprove/<?= $user['id']; ?>" method="POST"
                                             class="d-inline">
                                             <button type="submit" class="btn btn-sm btn-success shadow-sm me-1"><i
                                                     class="bi bi-check-lg"></i> Approve</button>
                                         </form>
                                     <?php endif; ?>
 
-                                    <a href="/doncosa/public/admin/memberEdit/<?= $user['id']; ?>"
+                                    <a href="/admin/memberEdit/<?= $user['id']; ?>"
                                         class="btn btn-sm btn-light border shadow-sm text-primary"><i
                                             class="bi bi-pencil-square"></i> Modify</a>
 
                                     <!-- Delete Button Form -->
-                                    <form action="/doncosa/public/admin/memberDelete/<?= $user['id']; ?>" method="POST"
+                                    <form action="/admin/memberDelete/<?= $user['id']; ?>" method="POST"
                                         class="d-inline"
                                         onsubmit="return confirm('WARNING: Are you sure you want to permanently delete this member? All associated events/projects created by this user will be orphaned.');">
                                         <button type="submit"

@@ -26,13 +26,13 @@
                         <i class="bi bi-check-circle-fill me-2"></i>
                         <?= htmlspecialchars($data['success']); ?>
                         <div class="mt-2 text-end">
-                            <a href="/doncosa/public/payments"
+                            <a href="/payments"
                                 class="btn btn-sm btn-outline-success fw-bold px-3 rounded-pill shadow-sm"><i
                                     class="bi bi-arrow-return-left me-1"></i> Back to Finances</a>
                         </div>
                     </div>
                 <?php else: ?>
-                    <form action="/doncosa/public/payments/submit/<?= $data['due_id']; ?>" method="post">
+                    <form action="/payments/submit/<?= $data['due_id']; ?>" method="post">
 
                         <div class="mb-4">
                             <label for="due_id" class="form-label fw-bold text-uppercase small text-muted">Select Target
@@ -121,7 +121,7 @@
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center mt-5 pt-3 border-top">
-                            <a href="/doncosa/public/payments"
+                            <a href="/payments"
                                 class="btn btn-outline-secondary px-4 fw-bold shadow-sm rounded-pill"><i
                                     class="bi bi-x-circle me-1"></i> Cancel</a>
                             <button type="submit"

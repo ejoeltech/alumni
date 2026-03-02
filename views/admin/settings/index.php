@@ -2,7 +2,7 @@
     <div class="col-md-10 col-lg-8 mx-auto">
         <div class="card bg-transparent border-0 pb-0">
             <div class="card-body py-1 d-flex justify-content-between">
-                <a href="/doncosa/public/dashboard" class="text-secondary text-decoration-none"><i
+                <a href="/dashboard" class="text-secondary text-decoration-none"><i
                         class="bi bi-arrow-left-short"></i> Back to Dashboard</a>
                 <span class="badge bg-secondary p-2 rounded-pill shadow-sm">Global System Variables</span>
             </div>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
 
-                <form action="/doncosa/public/admin/settings" method="POST" enctype="multipart/form-data">
+                <form action="/admin/settings" method="POST" enctype="multipart/form-data">
 
                     <div class="mb-4">
                         <label for="site_name" class="form-label fw-bold">Platform Title / Site Name</label>
@@ -72,7 +72,7 @@
                                 <?php if (!empty($data['settings']['site_logo'])): ?>
                                     <div class="me-4 p-2 bg-white border rounded shadow-sm text-center">
                                         <small class="d-block text-muted fw-bold mb-2">Current Logo</small>
-                                        <img src="/doncosa/public/<?= htmlspecialchars($data['settings']['site_logo']); ?>"
+                                        <img src="/<?= htmlspecialchars($data['settings']['site_logo']); ?>"
                                             alt="Current Logo" style="max-height: 80px; object-fit: contain;">
                                     </div>
                                 <?php endif; ?>

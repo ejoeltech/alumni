@@ -16,7 +16,7 @@
                 institution.</p>
             <h3>Our Vision</h3>
             <p>To be the premier platform for networking, mentorship, and development for all graduates.</p>
-            <p><a href="/doncosa/public/" class="btn btn-secondary mt-3">Back to Home</a></p>
+            <p><a href="/" class="btn btn-secondary mt-3">Back to Home</a></p>
         </div>
     </div>
 </div>

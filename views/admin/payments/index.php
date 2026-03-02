@@ -24,7 +24,7 @@
 <div class="card border-0 shadow-sm rounded-4 bg-white mb-5">
     <div class="card-header bg-transparent border-bottom-0 pt-4 px-4 pb-2 d-flex justify-content-between">
         <h5 class="fw-bold text-dark mb-0">Global Audit Ledger</h5>
-        <a href="/doncosa/public/admin/dues" class="btn btn-sm btn-outline-dark fw-bold rounded-pill"><i
+        <a href="/admin/dues" class="btn btn-sm btn-outline-dark fw-bold rounded-pill"><i
                 class="bi bi-wallet2 me-1"></i> Manage Base Levies</a>
     </div>
 
@@ -116,15 +116,15 @@
                                 <td class="text-end px-4">
                                     <?php if ($payment['status'] === 'Pending'): ?>
                                         <div class="btn-group shadow-sm">
-                                            <a href="/doncosa/public/admin/paymentVerify/<?= $payment['id']; ?>?status=Verified"
+                                            <a href="/admin/paymentVerify/<?= $payment['id']; ?>?status=Verified"
                                                 class="btn btn-sm btn-success fw-bold px-3"><i class="bi bi-check-lg"></i></a>
-                                            <a href="/doncosa/public/admin/paymentVerify/<?= $payment['id']; ?>?status=Rejected"
+                                            <a href="/admin/paymentVerify/<?= $payment['id']; ?>?status=Rejected"
                                                 class="btn btn-sm btn-danger fw-bold px-3"><i class="bi bi-x-lg"></i></a>
                                         </div>
                                     <?php else: ?>
                                         <span class="text-muted fst-italic small">Audited.</span>
                                         <!-- Allow override back to pending if needed -->
-                                        <a href="/doncosa/public/admin/paymentVerify/<?= $payment['id']; ?>?status=Pending"
+                                        <a href="/admin/paymentVerify/<?= $payment['id']; ?>?status=Pending"
                                             class="d-inline-block ms-2 text-warning" title="Reset to Pending"><i
                                                 class="bi bi-arrow-counterclockwise"></i></a>
                                     <?php endif; ?>

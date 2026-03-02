@@ -4,9 +4,9 @@
         <p class="text-muted">Generate abstract available positions that can be mapped to active elections later.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/admin/positionCreate" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i>
+        <a href="/admin/positionCreate" class="btn btn-primary"><i class="bi bi-plus-circle me-1"></i>
             Register New Position Map</a>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2">Back to Dashboard</a>
     </div>
 </div>
 
@@ -44,7 +44,7 @@
                                     </small>
                                 </td>
                                 <td class="pe-4 text-end">
-                                    <form action="/doncosa/public/admin/positionDelete/<?= $pos['id']; ?>" method="POST"
+                                    <form action="/admin/positionDelete/<?= $pos['id']; ?>" method="POST"
                                         class="d-inline"
                                         onsubmit="return confirm('CRITICAL WARNING: Wiping an abstract position map will cascade delete ALL registered votes, candidates, and live mappings connected to it inside active elections. PROCEED?');">
                                         <button type="submit" class="btn btn-sm btn-outline-danger"><i class="bi bi-trash3"></i>

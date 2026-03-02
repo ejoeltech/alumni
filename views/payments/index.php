@@ -7,7 +7,7 @@
         <p class="text-muted fs-5">Track your active platform levies and past payment verifications.</p>
     </div>
     <div class="col-md-4 text-md-end">
-        <a href="/doncosa/public/payments/submit" class="btn btn-success shadow-sm fw-bold px-4 py-2 mt-3 mt-md-0"><i
+        <a href="/payments/submit" class="btn btn-success shadow-sm fw-bold px-4 py-2 mt-3 mt-md-0"><i
                 class="bi bi-cloud-arrow-up-fill me-1"></i> Submit Payment Log</a>
     </div>
 </div>
@@ -55,7 +55,7 @@
 
                             <div class="text-end ps-3">
                                 <h4 class="fw-bold text-success mb-1">&#8358;<?= number_format($due['amount'], 2); ?></h4>
-                                <a href="/doncosa/public/payments/submit/<?= $due['id']; ?>"
+                                <a href="/payments/submit/<?= $due['id']; ?>"
                                     class="btn btn-sm btn-outline-success rounded-pill fw-bold shadow-sm px-3 mt-2">Log
                                     Receipt</a>
                             </div>

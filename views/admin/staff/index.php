@@ -5,9 +5,9 @@
         <p class="text-muted fw-bold">Manage elevated system user accounts, permissions, and roles.</p>
     </div>
     <div class="col-md-6 text-md-end">
-        <a href="/doncosa/public/admin/members" class="btn btn-outline-primary ms-2 shadow-sm rounded border-3"><i
+        <a href="/admin/members" class="btn btn-outline-primary ms-2 shadow-sm rounded border-3"><i
                 class="bi bi-people-fill pe-1"></i> Add Admin from Member Directory</a>
-        <a href="/doncosa/public/dashboard" class="btn btn-outline-secondary ms-2 shadow-sm rounded border-3">Exit
+        <a href="/dashboard" class="btn btn-outline-secondary ms-2 shadow-sm rounded border-3">Exit
             Station</a>
     </div>
 </div>
@@ -154,7 +154,7 @@
                                     <?php endif; ?>
                                 </td>
                                 <td class="text-end pe-4">
-                                    <a href="/doncosa/public/admin/memberEdit/<?= $user['id']; ?>"
+                                    <a href="/admin/memberEdit/<?= $user['id']; ?>"
                                         class="btn btn-sm btn-outline-dark shadow-sm rounded <?= ($user['id'] == clone $_SESSION['user_id']) ? 'disabled' : ''; ?>"><i
                                             class="bi bi-sliders pe-1"></i> Edit Access</a>
                                 </td>
