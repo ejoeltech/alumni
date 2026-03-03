@@ -109,9 +109,8 @@ class User
                 return false;
             }
         } catch (PDOException $e) {
-            // Failsafe against unhandled 500 Server Crash errors from strict database constraints
-            error_log('DonCosa Registration Error: ' . $e->getMessage());
-            return false;
+            // Echo raw error onscreen instead of error_log since production server suppresses logs
+            die("<div style='padding:20px; background:#f8d7da; color:#721c24; border:1px solid #f5c6cb; border-radius:5px; margin:20px;'><strong>Database Crash:</strong> " . htmlspecialchars($e->getMessage()) . "</div>");
         }
     }
 
