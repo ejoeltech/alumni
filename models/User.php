@@ -86,19 +86,31 @@ class User
         // Bind values
         $stmt->bindParam(':full_name', $data['full_name']);
         $stmt->bindParam(':email', $data['email']);
+        // Phone
         $stmt->bindParam(':phone_number', $data['phone_number']);
 
+        // Nullable Dob
         $dob = !empty($data['date_of_birth']) ? $data['date_of_birth'] : null;
         $stmt->bindParam(':dob', $dob);
 
-        $stmt->bindParam(':graduation_year', $data['graduation_year']);
-        $stmt->bindParam(':class_set', $data['class_set']);
+        // Nullable graduation year and class set
+        $grad_year = !empty($data['graduation_year']) ? $data['graduation_year'] : null;
+        $class_set = !empty($data['class_set']) ? $data['class_set'] : null;
+
+        $stmt->bindParam(':graduation_year', $grad_year);
+        $stmt->bindParam(':class_set', $class_set);
         $stmt->bindParam(':password', $data['password']);
 
         // Execute
-        if ($stmt->execute()) {
-            return true;
-        } else {
+        try {
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            // Failsafe against unhandled 500 Server Crash errors from strict database constraints
+            error_log('DonCosa Registration Error: ' . $e->getMessage());
             return false;
         }
     }
