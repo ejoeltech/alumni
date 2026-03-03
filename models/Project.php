@@ -44,9 +44,13 @@ class Project
         $stmt = $this->db->prepare('INSERT INTO projects (name, description, budget, start_date, completion_date, status, project_lead, created_by) VALUES (:name, :description, :budget, :start_date, :completion_date, :status, :project_lead, :created_by)');
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':budget', $data['budget']);
-        $stmt->bindParam(':start_date', $data['start_date']);
-        $stmt->bindParam(':completion_date', $data['completion_date']);
+        $budget = !empty($data['budget']) ? $data['budget'] : null;
+        $start_date = !empty($data['start_date']) ? $data['start_date'] : null;
+        $completion_date = !empty($data['completion_date']) ? $data['completion_date'] : null;
+
+        $stmt->bindParam(':budget', $budget);
+        $stmt->bindParam(':start_date', $start_date);
+        $stmt->bindParam(':completion_date', $completion_date);
         $stmt->bindParam(':status', $data['status']);
         $stmt->bindParam(':project_lead', $data['project_lead']);
         $stmt->bindParam(':created_by', $data['created_by']);
@@ -64,9 +68,13 @@ class Project
         $stmt->bindParam(':id', $data['id']);
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':budget', $data['budget']);
-        $stmt->bindParam(':start_date', $data['start_date']);
-        $stmt->bindParam(':completion_date', $data['completion_date']);
+        $budget = !empty($data['budget']) ? $data['budget'] : null;
+        $start_date = !empty($data['start_date']) ? $data['start_date'] : null;
+        $completion_date = !empty($data['completion_date']) ? $data['completion_date'] : null;
+
+        $stmt->bindParam(':budget', $budget);
+        $stmt->bindParam(':start_date', $start_date);
+        $stmt->bindParam(':completion_date', $completion_date);
         $stmt->bindParam(':status', $data['status']);
         $stmt->bindParam(':project_lead', $data['project_lead']);
 

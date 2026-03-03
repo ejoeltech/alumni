@@ -34,8 +34,11 @@ class Election
         $stmt = $this->db->prepare('INSERT INTO elections (title, description, start_date, end_date, is_active) VALUES (:title, :description, :start_date, :end_date, :is_active)');
         $stmt->bindParam(':title', $data['title']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':start_date', $data['start_date']);
-        $stmt->bindParam(':end_date', $data['end_date']);
+        $start_date = !empty($data['start_date']) ? $data['start_date'] : null;
+        $end_date = !empty($data['end_date']) ? $data['end_date'] : null;
+
+        $stmt->bindParam(':start_date', $start_date);
+        $stmt->bindParam(':end_date', $end_date);
         $stmt->bindParam(':is_active', $data['is_active']);
         return $stmt->execute();
     }

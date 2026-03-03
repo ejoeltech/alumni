@@ -44,7 +44,8 @@ class Event
         $stmt = $this->db->prepare('INSERT INTO events (title, description, event_date, location, status, image, created_by) VALUES (:title, :description, :event_date, :location, :status, :image, :created_by)');
         $stmt->bindParam(':title', $data['title']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':event_date', $data['event_date']);
+        $event_date = !empty($data['event_date']) ? $data['event_date'] : null;
+        $stmt->bindParam(':event_date', $event_date);
         $stmt->bindParam(':location', $data['location']);
         $stmt->bindParam(':status', $data['status']);
         $stmt->bindParam(':image', $data['image']);
@@ -69,7 +70,8 @@ class Event
         $stmt->bindParam(':id', $data['id']);
         $stmt->bindParam(':title', $data['title']);
         $stmt->bindParam(':description', $data['description']);
-        $stmt->bindParam(':event_date', $data['event_date']);
+        $event_date = !empty($data['event_date']) ? $data['event_date'] : null;
+        $stmt->bindParam(':event_date', $event_date);
         $stmt->bindParam(':location', $data['location']);
         $stmt->bindParam(':status', $data['status']);
 

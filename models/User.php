@@ -290,8 +290,11 @@ class User
         $stmt->bindParam(':phone_number', $data['phone_number']);
         $dob = !empty($data['date_of_birth']) ? $data['date_of_birth'] : null;
         $stmt->bindParam(':date_of_birth', $dob);
-        $stmt->bindParam(':graduation_year', $data['graduation_year']);
-        $stmt->bindParam(':class_set', $data['class_set']);
+        $grad_year = !empty($data['graduation_year']) ? $data['graduation_year'] : null;
+        $class_set = !empty($data['class_set']) ? $data['class_set'] : null;
+
+        $stmt->bindParam(':graduation_year', $grad_year);
+        $stmt->bindParam(':class_set', $class_set);
         if (isset($data['profile_picture'])) {
             $stmt->bindParam(':profile_picture', $data['profile_picture']);
         }
